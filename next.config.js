@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
+const isExport = process.env.EXPORT === 'true'
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
-  basePath: '/Affy',
-  trailingSlash: true,
+  ...(isExport && {
+    output: 'export',
+    basePath: '/Affy',
+    trailingSlash: true,
+  }),
   images: {
     unoptimized: true,
   },
