@@ -1,0 +1,3 @@
+[build]
+  command = "EXPORT=true npm run build"
+  publish = "out"
