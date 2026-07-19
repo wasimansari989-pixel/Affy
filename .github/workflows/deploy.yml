@@ -23,7 +23,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: EXPORT=true npm run build
+      - run: EXPORT=true BASE_PATH=/Affy npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
