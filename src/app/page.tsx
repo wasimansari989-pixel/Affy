@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Lenis from 'lenis'
-import Background from '@/components/effects/Background'
+import BeachBackground from '@/components/effects/BeachBackground'
 import Particles from '@/components/effects/Particles'
 import CursorGlow from '@/components/effects/CursorGlow'
 import Navbar from '@/components/layout/Navbar'
@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <Background />
+      <BeachBackground />
       <Particles />
       <CursorGlow />
       <div className="noise-overlay" />
