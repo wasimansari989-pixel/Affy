@@ -4,16 +4,16 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const images = [
-  '/assets/1.jpg',
-  '/assets/2.png',
-  '/assets/4.jpg',
-  '/assets/5.jpg',
-  '/assets/6.jpg',
-  '/assets/7.jpg',
-  '/assets/8.png',
-  '/assets/9.jpeg',
-  '/assets/10.jpeg',
-  '/assets/11.jpeg',
+  '/assets/1.webp',
+  '/assets/2.webp',
+  '/assets/4.webp',
+  '/assets/5.webp',
+  '/assets/6.webp',
+  '/assets/7.webp',
+  '/assets/8.webp',
+  '/assets/9.webp',
+  '/assets/10.webp',
+  '/assets/11.webp',
   '/assets/12.png',
 ]
 
@@ -106,7 +106,9 @@ export default function RotatingModel() {
             >
               <img
                 src={images[current]}
-                alt=""
+                alt="Product View"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
                 draggable={false}
               />

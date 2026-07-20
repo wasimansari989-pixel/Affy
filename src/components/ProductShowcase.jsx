@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
-import productImg from '../assets/affy-product.png'
+
+const productImg = '/assets/affy-product.svg'
 
 export default function ProductShowcase() {
   const containerRef = useRef(null)

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AAFY Natural Beauty Cream | Premium Luxury Skincare',
     description: 'Premium Natural Beauty Cream for healthy, glowing skin.',
-    images: ['/assets/affy-product.png'],
+    images: ['/assets/affy-product.svg'],
   },
 }
 

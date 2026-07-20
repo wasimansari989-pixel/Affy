@@ -165,7 +165,8 @@ export default function HeroSection() {
                     boxShadow: '0 30px 80px rgba(197,168,128,0.15), 0 0 60px rgba(197,168,128,0.05), inset 0 1px 0 rgba(255,255,255,0.3)',
                   }}
                 >
-                  <img src="/assets/img-1.jpg" alt=""
+                  <img src="/assets/img-1.jpg" alt="AAFY Product Showcase 1"
+                       decoding="async"
                        className="w-full h-full object-cover relative z-10"
                        style={{ filter: 'brightness(1.05) contrast(1.02)' }} />
                   <div className="absolute inset-0 rounded-[30px]"
@@ -186,7 +187,8 @@ export default function HeroSection() {
                     boxShadow: '0 30px 80px rgba(197,168,128,0.15), 0 0 60px rgba(197,168,128,0.05), inset 0 1px 0 rgba(255,255,255,0.3)',
                   }}
                 >
-                  <img src="/assets/img-2.png" alt=""
+                  <img src="/assets/img-2.png" alt="AAFY Product Showcase 2"
+                       decoding="async"
                        className="w-full h-full object-cover relative z-10"
                        style={{ filter: 'brightness(1.05) contrast(1.02)' }} />
                   <div className="absolute inset-0 rounded-[30px]"
