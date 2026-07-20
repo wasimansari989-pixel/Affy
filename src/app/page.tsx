@@ -1,14 +1,8 @@
-'use client'
-
 import dynamic from 'next/dynamic'
 import Navbar from '@/components/layout/Navbar'
 import HeroSection from '@/components/sections/HeroSection'
 import SmoothScroll from '@/components/layout/SmoothScroll'
-
-// Dynamic imports for heavy background effects (client-side only rendering to unblock main thread)
-const BeachBackground = dynamic(() => import('@/components/effects/BeachBackground'), { ssr: false })
-const Particles = dynamic(() => import('@/components/effects/Particles'), { ssr: false })
-const CursorGlow = dynamic(() => import('@/components/effects/CursorGlow'), { ssr: false })
+import ClientEffects from '@/components/effects/ClientEffects'
 
 // Dynamic imports for below-the-fold sections (code splitting into separate lazy chunks)
 const AboutSection = dynamic(() => import('@/components/sections/AboutSection'))
@@ -23,9 +17,7 @@ const Footer = dynamic(() => import('@/components/layout/Footer'))
 export default function Home() {
   return (
     <SmoothScroll>
-      <BeachBackground />
-      <Particles />
-      <CursorGlow />
+      <ClientEffects />
       <div className="noise-overlay" />
       <div className="vignette" />
       <Navbar />
