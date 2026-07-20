@@ -81,10 +81,10 @@ export default function Navbar() {
             }}
           >
           <button onClick={() => scrollTo('#home')} className="flex items-center gap-2 shrink-0">
-            <span className="font-display text-xl md:text-2xl tracking-wider text-gold">
+            <span className="font-display text-xl md:text-2xl tracking-wider text-gold-shiny font-bold">
               AAFY
             </span>
-            <span className="hidden md:block text-[0.55rem] tracking-[0.15em] uppercase text-luxury-brown/40 leading-tight"
+            <span className="hidden md:block text-[0.55rem] tracking-[0.18em] uppercase text-gold-shiny font-semibold leading-tight drop-shadow-sm"
                   style={{ fontFamily: 'Inter, sans-serif' }}>
               Natural<br />Beauty Cream
             </span>
