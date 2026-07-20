@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Search, Heart, ShoppingBag, Moon, Sun } from 'lucide-react'
-import { useTheme } from '@/components/ThemeProvider'
+import { Menu, X, Search, Heart, ShoppingBag } from 'lucide-react'
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -20,8 +19,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
-  const { darkMode, toggleDarkMode } = useTheme()
-
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -71,25 +68,15 @@ export default function Navbar() {
             className="mx-auto flex items-center justify-between rounded-full px-5 py-3 transition-all duration-500 "
             style={{
               maxWidth: scrolled ? '1100px' : '1300px',
-              background: darkMode
-                ? scrolled
-                  ? 'rgba(26, 20, 18, 0.85)'
-                  : 'rgba(26, 20, 18, 0.4)'
-                : scrolled
-                  ? 'rgba(253, 248, 244, 0.85)'
-                  : 'rgba(255, 255, 255, 0.06)',
+              background: scrolled
+                ? 'rgba(253, 248, 244, 0.85)'
+                : 'rgba(255, 255, 255, 0.06)',
               backdropFilter: `blur(${scrolled ? '40px' : '30px'}) saturate(1.4) brightness(1.1)`,
               WebkitBackdropFilter: `blur(${scrolled ? '40px' : '30px'}) saturate(1.4) brightness(1.1)`,
-              border: darkMode
-                ? '1px solid rgba(197, 168, 128, 0.15)'
-                : '1px solid rgba(255, 255, 255, 0.2)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
               boxShadow: scrolled
-                ? darkMode
-                  ? '0 4px 30px rgba(0,0,0,0.3), inset 0 1px 0 rgba(197,168,128,0.1)'
-                  : '0 4px 30px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.3)'
-                : darkMode
-                  ? 'inset 0 1px 0 rgba(197,168,128,0.1)'
-                  : 'inset 0 1px 0 rgba(255,255,255,0.3)',
+                ? '0 4px 30px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.3)'
+                : 'inset 0 1px 0 rgba(255,255,255,0.3)',
               height: scrolled ? '64px' : '72px',
             }}
           >
@@ -143,13 +130,7 @@ export default function Navbar() {
                 0
               </span>
             </button>
-            <button
-              onClick={toggleDarkMode}
-              className="p-2.5 transition-colors rounded-full hover:bg-luxury-gold/5 hidden md:block"
-              style={{ color: darkMode ? 'rgba(197,168,128,0.7)' : 'rgba(44,36,34,0.4)' }}
-            >
-              {darkMode ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
+
 
             <div className="hidden md:block w-[1px] h-6 bg-luxury-gold/15 mx-1" />
 
@@ -180,10 +161,10 @@ export default function Navbar() {
             <div
               className="rounded-2xl p-3 space-y-1"
               style={{
-                background: darkMode ? 'rgba(26, 20, 18, 0.95)' : 'rgba(253, 248, 244, 0.95)',
+                background: 'rgba(253, 248, 244, 0.95)',
                 backdropFilter: 'blur(40px)',
-                border: darkMode ? '1px solid rgba(197,168,128,0.15)' : '1px solid rgba(255,255,255,0.2)',
-                boxShadow: darkMode ? '0 20px 60px rgba(0,0,0,0.3)' : '0 20px 60px rgba(0,0,0,0.08)',
+                border: '1px solid rgba(255,255,255,0.2)',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
               }}
             >
               {navLinks.map((link) => (

@@ -9,6 +9,7 @@ const ingredients = [
   { name: 'Hyaluronic Acid', role: 'Plumping', color: 'rgba(180, 200, 220, 0.15)' },
   { name: 'Niacinamide', role: 'Even Tone', color: 'rgba(220, 200, 180, 0.15)' },
   { name: 'Jojoba Oil', role: 'Nourishing', color: 'rgba(210, 190, 150, 0.15)' },
+  { name: 'Avocado', role: 'Rich Nourishment', color: 'rgba(120, 170, 90, 0.15)' },
 ]
 
 export default function IngredientsSection() {

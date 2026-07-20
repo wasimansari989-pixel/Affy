@@ -11,6 +11,7 @@ const ingredients = [
   { name: 'Green Tea', role: 'Antioxidant Protection', color: 'rgba(162, 198, 148, 0.15)' },
   { name: 'Jojoba Oil', role: 'Balanced Nourishment', color: 'rgba(210, 190, 150, 0.15)' },
   { name: 'Hyaluronic Acid', role: 'Deep Plumping', color: 'rgba(180, 200, 220, 0.15)' },
+  { name: 'Avocado', role: 'Rich Nourishment', color: 'rgba(120, 170, 90, 0.15)' },
 ]
 
 export default function IngredientsSection() {

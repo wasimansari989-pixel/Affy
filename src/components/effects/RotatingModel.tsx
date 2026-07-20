@@ -10,6 +10,11 @@ const images = [
   '/assets/5.jpg',
   '/assets/6.jpg',
   '/assets/7.jpg',
+  '/assets/8.png',
+  '/assets/9.jpeg',
+  '/assets/10.jpeg',
+  '/assets/11.jpeg',
+  '/assets/12.png',
 ]
 
 export default function RotatingModel() {

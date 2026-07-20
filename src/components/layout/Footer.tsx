@@ -111,19 +111,32 @@ export default function Footer() {
                 </h3>
                 <div className="flex gap-2">
                   {[
-                    { icon: Instagram, label: 'Instagram' },
-                    { icon: MessageCircle, label: 'WhatsApp' },
-                    { icon: Facebook, label: 'Facebook' },
-                  ].map(({ icon: Icon, label }) => (
-                    <button key={label}
-                            className="w-10 h-10 rounded-full flex items-center justify-center text-luxury-brown/40 hover:text-luxury-gold transition-all duration-300 hover:bg-luxury-gold/5"
-                            style={{
-                              border: '1px solid rgba(197,168,128,0.15)',
-                              backdropFilter: 'blur(10px)',
-                            }}>
-                      <Icon size={16} />
-                    </button>
-                  ))}
+                    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/aafy31/' },
+                    { icon: MessageCircle, label: 'WhatsApp', href: undefined },
+                    { icon: Facebook, label: 'Facebook', href: undefined },
+                  ].map(({ icon: Icon, label, href }) => {
+                    const commonClasses = "w-10 h-10 rounded-full flex items-center justify-center text-luxury-brown/40 hover:text-luxury-gold transition-all duration-300 hover:bg-luxury-gold/5"
+                    const commonStyle = {
+                      border: '1px solid rgba(197,168,128,0.15)',
+                      backdropFilter: 'blur(10px)',
+                    }
+                    const content = <Icon size={16} />
+
+                    if (href) {
+                      return (
+                        <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                           className={commonClasses} style={commonStyle}>
+                          {content}
+                        </a>
+                      )
+                    }
+
+                    return (
+                      <button key={label} className={commonClasses} style={commonStyle}>
+                        {content}
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
             </div>

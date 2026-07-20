@@ -132,7 +132,7 @@ export default function HeroSection() {
             transition: 'transform 0.1s ease-out',
           }}
         >
-          <div className="relative" style={{ width: 'min(480px, 75vw)', height: 'min(600px, 95vw)' }}>
+          <div className="relative" style={{ width: 'min(576px, 90vw)', height: 'min(720px, 114vw)' }}>
             <div className="absolute inset-0 rounded-full"
                  style={{
                    background: 'radial-gradient(circle at center, rgba(197,168,128,0.15) 0%, transparent 60%)',
