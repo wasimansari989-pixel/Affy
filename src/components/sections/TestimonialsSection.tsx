@@ -67,8 +67,8 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-[0.6rem] tracking-[0.25em] uppercase"
-                style={{ color: 'rgba(197,168,128,0.6)', fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
+          <span className="text-[0.65rem] tracking-[0.25em] uppercase font-bold text-luxury-brown"
+                style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
             Testimonials
           </span>
           <h2 className="font-display text-[clamp(2rem,5vw,3.2rem)] leading-[1.1] tracking-[-0.02em] text-luxury-brown mt-3">
@@ -76,7 +76,7 @@ export default function TestimonialsSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {testimonials.map((t, index) => (
             <motion.div
               key={t.name}
@@ -85,19 +85,23 @@ export default function TestimonialsSection() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: index * 0.08, ease: [0.2, 0.8, 0.2, 1] }}
               whileHover={{ y: -6 }}
-              className="glass-card p-6 md:p-8 group relative overflow-hidden"
+              className="glass-card p-6 md:p-8 relative overflow-hidden flex flex-col justify-between"
             >
+              <div className="absolute inset-0 glass-shine" />
+
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-white text-sm font-[600]"
-                       style={{ background: t.gradient }}>
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center text-luxury-brown font-display text-sm font-semibold shadow-sm"
+                    style={{ background: t.gradient }}
+                  >
                     {t.initials}
                   </div>
                   <div>
-                    <p className="text-sm font-[500] text-luxury-brown" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <p className="text-sm font-[600] text-luxury-brown" style={{ fontFamily: 'Inter, sans-serif' }}>
                       {t.name}
                     </p>
-                    <p className="text-xs text-luxury-brown/40" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <p className="text-xs text-luxury-brown/70 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                       {t.location}
                     </p>
                   </div>
@@ -109,7 +113,7 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
 
-                <p className="text-sm text-luxury-brown/60 leading-relaxed italic"
+                <p className="text-sm text-luxury-brown/80 font-medium leading-relaxed italic"
                    style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.7 }}>
                   &ldquo;{t.text}&rdquo;
                 </p>
@@ -128,7 +132,7 @@ export default function TestimonialsSection() {
           {[...Array(5)].map((_, i) => (
             <Star key={i} size={16} className="fill-luxury-gold text-luxury-gold" />
           ))}
-          <span className="text-sm text-luxury-brown/40 ml-2 tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <span className="text-sm text-luxury-brown/80 font-semibold ml-2 tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>
             4.9 / 5.0 Average Rating
           </span>
         </motion.div>

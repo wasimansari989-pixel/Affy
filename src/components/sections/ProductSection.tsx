@@ -25,8 +25,8 @@ export default function ProductSection() {
           transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
           className="text-center mb-12"
         >
-          <span className="text-[0.6rem] tracking-[0.25em] uppercase"
-            style={{ color: 'rgba(197,168,128,0.6)', fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
+          <span className="text-[0.65rem] tracking-[0.25em] uppercase font-bold text-luxury-brown"
+            style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
             Our Product
           </span>
         </motion.div>

@@ -25,8 +25,8 @@ export default function BenefitsSection() {
           transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-[0.6rem] tracking-[0.25em] uppercase"
-                style={{ color: 'rgba(197,168,128,0.6)', fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
+          <span className="text-[0.65rem] tracking-[0.25em] uppercase font-bold text-luxury-brown"
+                style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
             Why AAFY
           </span>
           <h2 className="font-display text-[clamp(2rem,5vw,3.2rem)] leading-[1.1] tracking-[-0.02em] text-luxury-brown mt-3">
@@ -50,14 +50,15 @@ export default function BenefitsSection() {
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-all duration-500 group-hover:shadow-lg"
                      style={{
-                       background: 'rgba(197,168,128,0.1)',
-                       boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.3)',
+                       background: 'rgba(13,10,8,0.06)',
+                       border: '1px solid rgba(13,10,8,0.1)',
+                       boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.4)',
                      }}>
-                  <benefit.icon size={22} className="text-luxury-gold transition-all duration-500 group-hover:scale-110" />
+                  <benefit.icon size={22} className="text-luxury-brown transition-all duration-500 group-hover:scale-110" />
                 </div>
 
-                <h3 className="font-display text-xl text-luxury-brown mb-3">{benefit.title}</h3>
-                <p className="text-sm text-luxury-brown/50 leading-relaxed"
+                <h3 className="font-display text-xl font-bold text-luxury-brown mb-3">{benefit.title}</h3>
+                <p className="text-sm text-luxury-brown/80 font-medium leading-relaxed"
                    style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.7 }}>
                   {benefit.desc}
                 </p>
