@@ -58,8 +58,8 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
-            className="inline-block text-[0.6rem] tracking-[0.25em] uppercase mb-6"
-            style={{ color: 'rgba(197,168,128,0.7)', fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}
+            className="inline-block text-[0.65rem] tracking-[0.25em] uppercase mb-6 font-bold text-luxury-brown"
+            style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}
           >
             Premium Natural Skincare
           </motion.span>
@@ -68,11 +68,11 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
-            className="font-display text-[clamp(2.2rem,7.5vw,4.8rem)] leading-[0.92] tracking-[-0.03em]"
+            className="font-display text-[clamp(2rem,7vw,4.5rem)] leading-[0.92] tracking-[-0.03em]"
           >
-            <span className="block text-gold-shiny font-bold">AAFY</span>
-            <span className="block text-gold-shiny font-bold mt-1">Natural</span>
-            <span className="block text-gold-shiny font-bold mt-1">Beauty Cream</span>
+            <span className="block text-luxury-brown">AAFY</span>
+            <span className="block text-gold-shiny mt-1">Natural</span>
+            <span className="block text-luxury-brown mt-1">Beauty Cream</span>
           </motion.h1>
 
           <motion.p

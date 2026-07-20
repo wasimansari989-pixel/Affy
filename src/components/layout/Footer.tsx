@@ -22,7 +22,7 @@ export default function Footer() {
             transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
             className="text-center mb-16"
           >
-            <span className="text-[0.6rem] tracking-[0.25em] uppercase text-luxury-gold/50"
+            <span className="text-[0.65rem] tracking-[0.25em] uppercase font-bold text-luxury-brown"
                   style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
               Stay Connected
             </span>
@@ -54,17 +54,17 @@ export default function Footer() {
           <div className="glass rounded-3xl p-8 md:p-12 mb-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
               <div className="col-span-2 md:col-span-1">
-                <button onClick={() => scrollTo('home')} className="font-display text-2xl tracking-wider text-gold mb-3">
+                <button onClick={() => scrollTo('home')} className="font-display text-2xl tracking-wider text-gold-shiny font-bold mb-3">
                   AAFY
                 </button>
-                <p className="text-xs text-luxury-brown/40 leading-relaxed max-w-[200px]"
+                <p className="text-xs text-luxury-brown/80 font-medium leading-relaxed max-w-[200px]"
                    style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.7 }}>
                   Premium natural skincare crafted with pure ingredients for your most radiant skin.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-[0.55rem] tracking-[0.15em] uppercase text-luxury-gold/60 mb-4 font-[600]"
+                <h3 className="text-[0.6rem] tracking-[0.15em] uppercase text-luxury-brown/90 font-bold mb-4"
                     style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.15em' }}>
                   Quick Links
                 </h3>
@@ -77,7 +77,7 @@ export default function Footer() {
                   ].map((item) => (
                     <li key={item.name}>
                       <button onClick={() => scrollTo(item.id)}
-                              className="text-sm text-luxury-brown/50 hover:text-luxury-gold transition-colors duration-300"
+                              className="text-sm text-luxury-brown/75 font-medium hover:text-luxury-brown transition-colors duration-300"
                               style={{ fontFamily: 'Inter, sans-serif' }}>
                         {item.name}
                       </button>
@@ -87,7 +87,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <h3 className="text-[0.55rem] tracking-[0.15em] uppercase text-luxury-gold/60 mb-4 font-[600]"
+                <h3 className="text-[0.6rem] tracking-[0.15em] uppercase text-luxury-brown/90 font-bold mb-4"
                     style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.15em' }}>
                   Support
                 </h3>
@@ -95,7 +95,7 @@ export default function Footer() {
                   {['FAQ', 'Contact', 'Shipping', 'Returns'].map((item) => (
                     <li key={item}>
                       <button onClick={() => scrollTo(item.toLowerCase() === 'faq' ? 'faq' : 'contact')}
-                              className="text-sm text-luxury-brown/50 hover:text-luxury-gold transition-colors duration-300"
+                              className="text-sm text-luxury-brown/75 font-medium hover:text-luxury-brown transition-colors duration-300"
                               style={{ fontFamily: 'Inter, sans-serif' }}>
                         {item}
                       </button>
@@ -105,7 +105,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <h3 className="text-[0.55rem] tracking-[0.15em] uppercase text-luxury-gold/60 mb-4 font-[600]"
+                <h3 className="text-[0.6rem] tracking-[0.15em] uppercase text-luxury-brown/90 font-bold mb-4"
                     style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.15em' }}>
                   Connect
                 </h3>
@@ -115,9 +115,10 @@ export default function Footer() {
                     { icon: MessageCircle, label: 'WhatsApp', href: undefined },
                     { icon: Facebook, label: 'Facebook', href: undefined },
                   ].map(({ icon: Icon, label, href }) => {
-                    const commonClasses = "w-10 h-10 rounded-full flex items-center justify-center text-luxury-brown/40 hover:text-luxury-gold transition-all duration-300 hover:bg-luxury-gold/5"
+                    const commonClasses = "w-10 h-10 rounded-full flex items-center justify-center text-luxury-brown font-semibold hover:text-luxury-brown transition-all duration-300 hover:bg-black/10"
                     const commonStyle = {
-                      border: '1px solid rgba(197,168,128,0.15)',
+                      border: '1px solid rgba(13,10,8,0.2)',
+                      background: 'rgba(255,255,255,0.4)',
                       backdropFilter: 'blur(10px)',
                     }
                     const content = <Icon size={16} />

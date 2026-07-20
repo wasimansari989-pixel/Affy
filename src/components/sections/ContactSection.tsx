@@ -28,8 +28,8 @@ export default function ContactSection() {
           transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
           className="text-center mb-12"
         >
-          <span className="text-[0.6rem] tracking-[0.25em] uppercase"
-                style={{ color: 'rgba(197,168,128,0.6)', fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
+          <span className="text-[0.65rem] tracking-[0.25em] uppercase font-bold text-luxury-brown"
+                style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
             Get in Touch
           </span>
           <h2 className="font-display text-[clamp(2rem,5vw,3.2rem)] leading-[1.1] tracking-[-0.02em] text-luxury-brown mt-3">
@@ -48,15 +48,15 @@ export default function ContactSection() {
             <div className="glass-card p-5 md:p-6">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                     style={{ background: 'rgba(197,168,128,0.1)' }}>
-                  <Mail size={18} className="text-luxury-gold" />
+                     style={{ background: 'rgba(13,10,8,0.06)', border: '1px solid rgba(13,10,8,0.1)' }}>
+                  <Mail size={18} className="text-luxury-brown" />
                 </div>
                 <div>
-                  <p className="text-[0.55rem] tracking-[0.12em] uppercase text-luxury-gold/60 mb-0.5"
+                  <p className="text-[0.6rem] tracking-[0.12em] uppercase text-luxury-brown/80 font-semibold mb-0.5"
                      style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
                     Email
                   </p>
-                  <p className="text-sm text-luxury-brown font-[500]" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <p className="text-sm text-luxury-brown font-[600]" style={{ fontFamily: 'Inter, sans-serif' }}>
                     hello@aafy.in
                   </p>
                 </div>
@@ -65,15 +65,15 @@ export default function ContactSection() {
             <div className="glass-card p-5 md:p-6">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                     style={{ background: 'rgba(197,168,128,0.1)' }}>
-                  <MessageCircle size={18} className="text-luxury-gold" />
+                     style={{ background: 'rgba(13,10,8,0.06)', border: '1px solid rgba(13,10,8,0.1)' }}>
+                  <MessageCircle size={18} className="text-luxury-brown" />
                 </div>
                 <div>
-                  <p className="text-[0.55rem] tracking-[0.12em] uppercase text-luxury-gold/60 mb-0.5"
+                  <p className="text-[0.6rem] tracking-[0.12em] uppercase text-luxury-brown/80 font-semibold mb-0.5"
                      style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
                     WhatsApp
                   </p>
-                  <p className="text-sm text-luxury-brown font-[500]" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <p className="text-sm text-luxury-brown font-[600]" style={{ fontFamily: 'Inter, sans-serif' }}>
                     Chat with us
                   </p>
                 </div>
@@ -83,15 +83,15 @@ export default function ContactSection() {
                className="glass-card p-5 md:p-6 block" style={{ cursor: 'pointer' }}>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                     style={{ background: 'rgba(197,168,128,0.1)' }}>
-                  <Instagram size={18} className="text-luxury-gold" />
+                     style={{ background: 'rgba(13,10,8,0.06)', border: '1px solid rgba(13,10,8,0.1)' }}>
+                  <Instagram size={18} className="text-luxury-brown" />
                 </div>
                 <div>
-                  <p className="text-[0.55rem] tracking-[0.12em] uppercase text-luxury-gold/60 mb-0.5"
+                  <p className="text-[0.6rem] tracking-[0.12em] uppercase text-luxury-brown/80 font-semibold mb-0.5"
                      style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
                     Instagram
                   </p>
-                  <p className="text-sm text-luxury-brown font-[500]" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <p className="text-sm text-luxury-brown font-[600]" style={{ fontFamily: 'Inter, sans-serif' }}>
                     @aafy31
                   </p>
                 </div>
@@ -128,7 +128,7 @@ export default function ContactSection() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="text-[0.55rem] tracking-[0.12em] uppercase text-luxury-gold/60 mb-2 block"
+                        <label className="text-[0.6rem] tracking-[0.12em] uppercase text-luxury-brown/80 font-semibold mb-2 block"
                                style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
                           Name *
                         </label>
@@ -136,14 +136,14 @@ export default function ContactSection() {
                           type="text"
                           value={form.name}
                           onChange={(e) => setForm(p => ({ ...p, name: e.target.value }))}
-                          className="w-full bg-white/5 border border-luxury-gold/20 rounded-xl px-4 py-3 text-sm text-luxury-brown placeholder-luxury-brown/25 outline-none focus:border-luxury-gold/40 transition-colors"
+                          className="w-full bg-white/20 border border-luxury-brown/20 rounded-xl px-4 py-3 text-sm text-luxury-brown placeholder:text-luxury-brown/50 outline-none focus:border-luxury-brown/50 transition-colors"
                           placeholder="Your name"
                           style={{ fontFamily: 'Inter, sans-serif' }}
                           required
                         />
                       </div>
                       <div>
-                        <label className="text-[0.55rem] tracking-[0.12em] uppercase text-luxury-gold/60 mb-2 block"
+                        <label className="text-[0.6rem] tracking-[0.12em] uppercase text-luxury-brown/80 font-semibold mb-2 block"
                                style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
                           Email *
                         </label>
@@ -151,7 +151,7 @@ export default function ContactSection() {
                           type="email"
                           value={form.email}
                           onChange={(e) => setForm(p => ({ ...p, email: e.target.value }))}
-                          className="w-full bg-white/5 border border-luxury-gold/20 rounded-xl px-4 py-3 text-sm text-luxury-brown placeholder-luxury-brown/25 outline-none focus:border-luxury-gold/40 transition-colors"
+                          className="w-full bg-white/20 border border-luxury-brown/20 rounded-xl px-4 py-3 text-sm text-luxury-brown placeholder:text-luxury-brown/50 outline-none focus:border-luxury-brown/50 transition-colors"
                           placeholder="your@email.com"
                           style={{ fontFamily: 'Inter, sans-serif' }}
                           required
@@ -160,7 +160,7 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                      <label className="text-[0.55rem] tracking-[0.12em] uppercase text-luxury-gold/60 mb-2 block"
+                      <label className="text-[0.6rem] tracking-[0.12em] uppercase text-luxury-brown/80 font-semibold mb-2 block"
                              style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
                         Message *
                       </label>
@@ -168,7 +168,7 @@ export default function ContactSection() {
                         value={form.message}
                         onChange={(e) => setForm(p => ({ ...p, message: e.target.value }))}
                         rows={4}
-                        className="w-full bg-white/5 border border-luxury-gold/20 rounded-xl px-4 py-3 text-sm text-luxury-brown placeholder-luxury-brown/25 outline-none focus:border-luxury-gold/40 transition-colors resize-none"
+                        className="w-full bg-white/20 border border-luxury-brown/20 rounded-xl px-4 py-3 text-sm text-luxury-brown placeholder:text-luxury-brown/50 outline-none focus:border-luxury-brown/50 transition-colors resize-none"
                         placeholder="Your message..."
                         style={{ fontFamily: 'Inter, sans-serif' }}
                         required

@@ -15,18 +15,45 @@ export default function AboutSection() {
           transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
           className="text-center mb-12"
         >
-          <span className="text-[0.6rem] tracking-[0.25em] uppercase"
-                style={{ color: 'rgba(197,168,128,0.6)', fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
+          <span className="text-[0.65rem] tracking-[0.25em] uppercase font-bold text-luxury-brown"
+                style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
             Our Story
           </span>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+          {/* Stats Cards (Left Side) */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
+            className="grid grid-cols-2 gap-4"
+          >
+            {[
+              { num: '100%', label: 'Natural Ingredients' },
+              { num: '10K+', label: 'Happy Customers' },
+              { num: '4.9/5', label: 'Average Rating' },
+              { num: '2025', label: 'Year Founded' },
+            ].map((stat) => (
+              <div key={stat.label} className="glass-card p-6 md:p-8 text-center">
+                <span className="font-display text-2xl md:text-3xl text-gold block mb-1">
+                  {stat.num}
+                </span>
+                <span className="text-[0.55rem] tracking-[0.12em] uppercase text-luxury-brown/80 font-medium"
+                      style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Story Card (Right Side) */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
           >
             <div className="glass-strong rounded-[40px] p-8 md:p-12 relative overflow-hidden">
               <div className="glass-shine absolute inset-0 rounded-[40px]" />
@@ -51,31 +78,6 @@ export default function AboutSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
-            className="grid grid-cols-2 gap-4"
-          >
-            {[
-              { num: '100%', label: 'Natural Ingredients' },
-              { num: '10K+', label: 'Happy Customers' },
-              { num: '4.9/5', label: 'Average Rating' },
-              { num: '2025', label: 'Year Founded' },
-            ].map((stat) => (
-              <div key={stat.label} className="glass-card p-6 md:p-8 text-center">
-                <span className="font-display text-2xl md:text-3xl text-gold block mb-1">
-                  {stat.num}
-                </span>
-                <span className="text-[0.55rem] tracking-[0.12em] uppercase text-luxury-brown/40"
-                      style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
-                  {stat.label}
-                </span>
-              </div>
-            ))}
           </motion.div>
         </div>
       </div>
