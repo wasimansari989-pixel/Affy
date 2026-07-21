@@ -16,7 +16,7 @@ export default function AboutSection() {
           className="text-center mb-12"
         >
           <span className="text-[0.65rem] tracking-[0.25em] uppercase font-bold text-luxury-brown"
-                style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
+            style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.3em' }}>
             Our Story
           </span>
         </motion.div>
@@ -41,7 +41,7 @@ export default function AboutSection() {
                   {stat.num}
                 </span>
                 <span className="text-[0.55rem] tracking-[0.12em] uppercase text-luxury-brown/80 font-medium"
-                      style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
+                  style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}>
                   {stat.label}
                 </span>
               </div>
@@ -62,17 +62,17 @@ export default function AboutSection() {
                   The Art of Natural Beauty
                 </h2>
                 <div className="space-y-4 text-luxury-brown/60 leading-relaxed"
-                     style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
+                  style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.8 }}>
                   <p>
-                    At AAFY, we believe true beauty begins with nature. Our journey started with a simple vision — 
+                    At AAFY, we believe true beauty begins with nature. Our journey started with a simple vision —
                     to create skincare that harnesses the purest natural ingredients, backed by modern science.
                   </p>
                   <p>
-                    Every jar of AAFY Natural Beauty Cream is crafted with meticulous attention to detail, 
+                    Every jar of AAFY Natural Beauty Cream is crafted with meticulous attention to detail,
                     combining traditional wisdom with advanced formulation techniques.
                   </p>
                   <p>
-                    We source only the finest botanical ingredients, ensuring each component delivers 
+                    We source only the finest botanical ingredients, ensuring each component delivers
                     maximum benefit while respecting your skin natural balance.
                   </p>
                 </div>

@@ -161,22 +161,23 @@ export default function Navbar() {
             className="fixed top-[76px] left-4 right-4 z-40 lg:hidden"
           >
             <div
-              className="rounded-2xl p-3 space-y-1"
+              className="rounded-3xl p-4 space-y-1"
               style={{
-                background: 'rgba(253, 248, 244, 0.95)',
-                backdropFilter: 'blur(40px)',
-                border: '1px solid rgba(255,255,255,0.2)',
-                boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
+                background: 'rgba(255, 255, 255, 0.28)',
+                backdropFilter: 'blur(40px) saturate(1.8) brightness(1.05)',
+                WebkitBackdropFilter: 'blur(40px) saturate(1.8) brightness(1.05)',
+                border: '1px solid rgba(255, 255, 255, 0.45)',
+                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6)',
               }}
             >
               {navLinks.map((link) => (
                 <button
                   key={link.name}
                   onClick={() => scrollTo(link.href)}
-                  className={`block w-full text-left px-4 py-3 text-sm tracking-[0.08em] uppercase rounded-xl transition-colors ${
+                  className={`block w-full text-left px-4 py-3 text-sm tracking-[0.08em] uppercase rounded-xl transition-all ${
                     activeSection === link.href.slice(1)
-                      ? 'text-luxury-brown bg-luxury-gold/10'
-                      : 'text-luxury-brown/60 hover:text-luxury-brown hover:bg-luxury-gold/5'
+                      ? 'text-luxury-brown font-bold bg-luxury-gold/20 border border-luxury-gold/30'
+                      : 'text-luxury-brown/80 font-medium hover:text-luxury-brown hover:bg-white/20'
                   }`}
                   style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '0.1em' }}
                 >

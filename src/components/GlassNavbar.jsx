@@ -101,8 +101,14 @@ export default function GlassNavbar() {
             className="fixed top-[72px] left-4 right-4 z-40 md:hidden"
           >
             <div
-              className="glass rounded-2xl p-4 space-y-1"
-              style={{ background: 'rgba(253, 248, 244, 0.95)', backdropFilter: 'blur(40px)' }}
+              className="rounded-3xl p-4 space-y-1"
+              style={{
+                background: 'rgba(255, 255, 255, 0.28)',
+                backdropFilter: 'blur(40px) saturate(1.8) brightness(1.05)',
+                WebkitBackdropFilter: 'blur(40px) saturate(1.8) brightness(1.05)',
+                border: '1px solid rgba(255, 255, 255, 0.45)',
+                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6)',
+              }}
             >
               {navItems.map((item) => (
                 <Link

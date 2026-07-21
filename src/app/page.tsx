@@ -8,6 +8,7 @@ import ClientEffects from '@/components/effects/ClientEffects'
 const AboutSection = dynamic(() => import('@/components/sections/AboutSection'))
 const IngredientsSection = dynamic(() => import('@/components/sections/IngredientsSection'))
 const ProductSection = dynamic(() => import('@/components/sections/ProductSection'))
+const ThreeDGallerySection = dynamic(() => import('@/components/sections/ThreeDGallerySection'))
 const BenefitsSection = dynamic(() => import('@/components/sections/BenefitsSection'))
 const TestimonialsSection = dynamic(() => import('@/components/sections/TestimonialsSection'))
 const FAQSection = dynamic(() => import('@/components/sections/FAQSection'))
@@ -26,6 +27,7 @@ export default function Home() {
         <AboutSection />
         <IngredientsSection />
         <ProductSection />
+        <ThreeDGallerySection />
         <BenefitsSection />
         <TestimonialsSection />
         <FAQSection />
