@@ -44,11 +44,9 @@ export default function GlassNavbar() {
           className="glass-nav rounded-full px-6 py-3 flex items-center justify-between"
           style={{
             background: scrolled
-              ? 'rgba(253, 248, 244, 0.85)'
+              ? 'rgba(255, 255, 255, 0.25)'
               : 'rgba(255, 255, 255, 0.08)',
-            backdropFilter: scrolled
-              ? 'blur(40px) saturate(1.4) brightness(1.1)'
-              : 'blur(40px) saturate(1.4) brightness(1.1)',
+            backdropFilter: 'blur(30px) saturate(1.6) brightness(1.05)',
           }}
         >
           <Link to="/" className="flex items-center gap-2">

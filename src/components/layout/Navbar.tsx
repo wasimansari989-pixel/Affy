@@ -69,14 +69,16 @@ export default function Navbar() {
             style={{
               maxWidth: scrolled ? '1100px' : '1300px',
               background: scrolled
-                ? 'rgba(253, 248, 244, 0.85)'
-                : 'rgba(255, 255, 255, 0.06)',
-              backdropFilter: `blur(${scrolled ? '40px' : '30px'}) saturate(1.4) brightness(1.1)`,
-              WebkitBackdropFilter: `blur(${scrolled ? '40px' : '30px'}) saturate(1.4) brightness(1.1)`,
-              border: '1px solid rgba(255, 255, 255, 0.2)',
+                ? 'rgba(255, 255, 255, 0.25)'
+                : 'rgba(255, 255, 255, 0.08)',
+              backdropFilter: 'blur(30px) saturate(1.6) brightness(1.05)',
+              WebkitBackdropFilter: 'blur(30px) saturate(1.6) brightness(1.05)',
+              border: scrolled
+                ? '1px solid rgba(255, 255, 255, 0.4)'
+                : '1px solid rgba(255, 255, 255, 0.25)',
               boxShadow: scrolled
-                ? '0 4px 30px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.3)'
-                : 'inset 0 1px 0 rgba(255,255,255,0.3)',
+                ? '0 10px 30px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
+                : 'inset 0 1px 0 rgba(255, 255, 255, 0.3)',
               height: scrolled ? '64px' : '72px',
             }}
           >
