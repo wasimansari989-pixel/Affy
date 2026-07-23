@@ -7,13 +7,65 @@ import { Send, Mail, MessageCircle, Check, Instagram } from 'lucide-react'
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!form.name || !form.email || !form.message) return
-    setSubmitted(true)
-    setForm({ name: '', email: '', message: '' })
-    setTimeout(() => setSubmitted(false), 5000)
+
+    setLoading(true)
+    setError(null)
+
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+    console.log("EmailJS Credentials Sent:", { serviceId, templateId, publicKey })
+
+    // Validation for placeholder values or missing config
+    if (
+      !serviceId || serviceId.includes('here') ||
+      !templateId || templateId.includes('here') ||
+      !publicKey || publicKey.includes('here')
+    ) {
+      setLoading(false)
+      setError('EmailJS keys are missing. Please add NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, and NEXT_PUBLIC_EMAILJS_PUBLIC_KEY to your .env.local file.')
+      return
+    }
+
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: serviceId,
+          template_id: templateId,
+          user_id: publicKey,
+          template_params: {
+            from_name: form.name,
+            from_email: form.email,
+            message: form.message,
+          },
+        }),
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+        setForm({ name: '', email: '', message: '' })
+        setTimeout(() => setSubmitted(false), 8000)
+      } else {
+        const text = await response.text()
+        throw new Error(text || 'Failed to send message via EmailJS')
+      }
+    } catch (err: any) {
+      console.error(err)
+      setError(err.message || 'An error occurred while sending your message. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -121,7 +173,7 @@ export default function ContactSection() {
                     </div>
                     <p className="text-lg font-display text-luxury-brown mb-1">Thank You!</p>
                     <p className="text-sm text-luxury-brown/50" style={{ fontFamily: 'Inter, sans-serif' }}>
-                      We&apos;ll get back to you shortly.
+                      Your message has been sent successfully. We&apos;ll get back to you shortly.
                     </p>
                   </motion.div>
                 ) : (
@@ -140,6 +192,7 @@ export default function ContactSection() {
                           placeholder="Your name"
                           style={{ fontFamily: 'Inter, sans-serif' }}
                           required
+                          disabled={loading}
                         />
                       </div>
                       <div>
@@ -155,6 +208,7 @@ export default function ContactSection() {
                           placeholder="your@email.com"
                           style={{ fontFamily: 'Inter, sans-serif' }}
                           required
+                          disabled={loading}
                         />
                       </div>
                     </div>
@@ -172,21 +226,35 @@ export default function ContactSection() {
                         placeholder="Your message..."
                         style={{ fontFamily: 'Inter, sans-serif' }}
                         required
+                        disabled={loading}
                       />
                     </div>
 
+                    {error && (
+                      <div className="p-3 text-xs text-red-600 bg-red-50/80 border border-red-200 rounded-xl leading-relaxed font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        ⚠️ {error}
+                      </div>
+                    )}
+
                     <motion.button
-                      whileHover={{ scale: 1.01 }}
-                      whileTap={{ scale: 0.99 }}
+                      whileHover={{ scale: loading ? 1 : 1.01 }}
+                      whileTap={{ scale: loading ? 1 : 0.99 }}
                       type="submit"
-                      className="glass-btn-primary w-full py-4 rounded-full text-sm tracking-[0.15em] uppercase font-[500] relative overflow-hidden group"
+                      disabled={loading}
+                      className="glass-btn-primary w-full py-4 rounded-full text-sm tracking-[0.15em] uppercase font-[500] relative overflow-hidden group disabled:opacity-60"
                       style={{ fontFamily: 'Inter, sans-serif' }}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
-                        <Send size={16} />
-                        Send Message
+                        {loading ? 'Sending...' : (
+                          <>
+                            <Send size={16} />
+                            Send Message
+                          </>
+                        )}
                       </span>
-                      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                      {!loading && (
+                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                      )}
                     </motion.button>
                   </form>
                 )}
